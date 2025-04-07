@@ -2,5 +2,5 @@ crewai
 crewai_tools
 load_dotenv
 streamlit
-Spire.Doc
 pysqlite3-binary
+boto3
