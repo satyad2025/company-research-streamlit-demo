@@ -1,7 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool
-from tools.custom_tool import LinkedInSearchTool
 from dotenv import load_dotenv
 import os
 import certifi

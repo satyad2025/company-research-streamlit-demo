@@ -14,22 +14,22 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # crew locally, so refrain from adding unnecessary logic into this file.
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
-
-def run(user_input: str):
-    """
-    Run the crew.
-    """
-    result = ''
-    inputs = {
-        'company_name': user_input.strip(),
-        'current_year': str(datetime.now().year)
-    }
+class main_crew():
+    def startCrew(user_input: str):
+        """
+        Run the crew.
+        """
+        result = ''
+        inputs = {
+            'company_name': user_input.strip(),
+            'current_year': str(datetime.now().year)
+        }
     
-    try:
-        result = Companyresearcher().crew().kickoff(inputs=inputs)
-    except Exception as e:
-        result = f"An error occurred while running the crew: {e}"
+        try:
+            result = Companyresearcher().crew().kickoff(inputs=inputs)
+        except Exception as e:
+            result = f"An error occurred while running the crew: {e}"
     
-    return result
+        return result
 
 # run()

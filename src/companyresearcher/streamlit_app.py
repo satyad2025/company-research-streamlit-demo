@@ -9,7 +9,7 @@ except (ImportError, KeyError):
 
 import streamlit as st
 from utils.output_handler import capture_output
-from main import run
+from main import main_crew
 import os
 import certifi
 from spire.doc import *
@@ -59,7 +59,7 @@ if start_research and user_input.strip():
             
             # Single output capture context.
             with capture_output(output_container):
-                result = run(user_input)
+                result = main_crew.startCrew(user_input)
                 status.update(label="✅ Research completed!", state="complete", expanded=False)
         except Exception as e:
             status.update(label="❌ Error occurred", state="error")
