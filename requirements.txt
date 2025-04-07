@@ -4,3 +4,4 @@ load_dotenv
 streamlit
 pysqlite3-binary
 boto3
+Spire.Doc
