@@ -1,3 +1,12 @@
+# Handle SQLite for ChromaDB
+try:
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except (ImportError, KeyError):
+    pass
+
+
 import streamlit as st
 from utils.output_handler import capture_output
 from main import run
