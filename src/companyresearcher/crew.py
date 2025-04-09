@@ -1,6 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool
+from tools.custom_tool import LinkedInJobSearchTool
 from dotenv import load_dotenv
 import os
 import certifi
@@ -14,7 +15,7 @@ load_dotenv()
 
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
-# linked_tool = LinkedInSearchTool()
+linkedInJobSearch_tool = LinkedInJobSearchTool()
 
 @CrewBase
 class Companyresearcher():
@@ -35,6 +36,14 @@ class Companyresearcher():
             tools=[search_tool, scrape_tool],
             verbose=True
         )
+    
+    @agent
+    def linkedin_jobOpening_researcher(self) -> Agent:
+        return Agent(
+            config=self.agents_config['linkedin_jobOpening_researcher'],
+            tools=[linkedInJobSearch_tool],
+            verbose=True
+        )
    
     @agent
     def reporting_analyst(self) -> Agent:
@@ -50,6 +59,12 @@ class Companyresearcher():
     def research_task(self) -> Task:
         return Task(
             config=self.tasks_config['research_task'],
+        )
+    
+    @task
+    def linkedin_jobopening_researcher_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['linkedin_jobopening_researcher_task'],
         )
 
     @task

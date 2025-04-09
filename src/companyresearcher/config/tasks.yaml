@@ -11,10 +11,17 @@ research_task:
     Competitors, Tech Partners, Client Names, top 5 news and press. 
   agent: researcher
 
+linkedin_jobopening_researcher_task:
+  description: >
+    Search LinkedIn for open jobs at {company_name} and list job titles with URLs.
+  expected_output: >
+    A formatted list of job openings with clickable links.
+  agent: linkedin_jobOpening_researcher
+
 reporting_task:
   description: >
     Review the context you got for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Make sure the report is detailed and contains any and all relevant information retervied by previous agents.
   expected_output: >
     A fully fledged report with the main parameters, each with a full section of information.
     Follow the below structure:
@@ -24,6 +31,7 @@ reporting_task:
     * Year Founded:
     * Headquarters:
     * Number of Employees:
+    * Job openings:
     * Global Presence:
     * Leadership Team:
     * Company Type:
