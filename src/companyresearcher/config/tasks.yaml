@@ -6,7 +6,7 @@ research_task:
     then use the links mentioned in the user_preference.txt file under knowledge folder.
   expected_output: >
     Most relevant information about {company_name} without making any assumptions and must include below parameters; 
-    Company website, Company Founders, Company Founders LinkedIn Profile URL, Year Founded, Headquarters, Number of Employees, 
+    Company website, Company Founders,Year Founded, Headquarters, Number of Employees, Job openings,
     Global Presence, Leadership Team, Company Type, Services, Products, 
     Competitors, Tech Partners, Client Names, top 5 news and press. 
   agent: researcher
@@ -27,7 +27,6 @@ reporting_task:
     Follow the below structure:
     * Company website:
     * Company Founders:
-    * Company Founders LinkedIn Profile URLs:
     * Year Founded:
     * Headquarters:
     * Number of Employees:
