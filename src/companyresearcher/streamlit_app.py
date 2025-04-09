@@ -19,7 +19,7 @@ os.environ["SSL_CERT_FILE"] = certifi.where()
 
 # Configure the page
 st.set_page_config(
-    page_title="CrewAI Research Assistant",
+    page_title="LatentBridge Research Assistant",
     page_icon="🕵️‍♂️",
     layout="wide",
     initial_sidebar_state="expanded"
